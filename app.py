@@ -3,9 +3,9 @@ from streamlit_chat import message as st_message
 from transformers import pipeline
 
 
-
-@st.cache(allow_output_mutation=True)
 # @st.experimental_singleton
+@st.cache(allow_output_mutation=True)
+
 def load_model():
     model = pipeline('question-answering',model='ZeyadAhmed/AraElectra-Arabic-SQuADv2-QA')
     return model
