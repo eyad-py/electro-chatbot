@@ -4,7 +4,8 @@ from transformers import pipeline
 
 
 
-@st.cache(allow_output_mutation=True)
+# @st.cache(allow_output_mutation=True)
+@st.experimental_singleton
 def load_model():
     model = pipeline('question-answering',model='ZeyadAhmed/AraElectra-Arabic-SQuADv2-QA')
     return model
